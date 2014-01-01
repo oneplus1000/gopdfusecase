@@ -1,2 +1,4 @@
 *~
 *.orig
+main/main.bin
+main/build.sh
