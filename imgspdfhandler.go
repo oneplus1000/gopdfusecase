@@ -32,6 +32,14 @@ func (me *ImgsPdfHandler) ServeHTTP(w http.ResponseWriter,r *http.Request){
 		pdf.Image("../www/imgs/im2.jpg", float64(10+(d*50)), pdf.GetY()+65, nil)
 	}
 
+	for c := 0; c < x; c++ {
+		if c % 2 == 0 {
+			pdf.Image("../www/imgs/im1.jpg", float64(10+(c*60)), pdf.GetY()+105, nil)
+		} else{
+			pdf.Image("../www/imgs/im2.jpg", float64(10+(c*60)), pdf.GetY()+105, nil)
+		}
+	}
+
 	w.Header().Set("Content-type", "application/pdf")
 	w.Write(pdf.GetBytesPdf())
 }
