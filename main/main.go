@@ -4,7 +4,7 @@
 package main
 
 import(
-	"github.com/signintech/gopdfusecase"
+	"github.com/oneplus1000/gopdfusecase"
 )
 
 func main(){
