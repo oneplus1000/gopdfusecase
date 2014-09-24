@@ -2,6 +2,7 @@ package gopdfusecase
 
 import (
 	"github.com/signintech/gopdf"
+	"github.com/signintech/gopdf/fontmaker"
 	"github.com/signintech/gopdf/fonts"
 	"net/http"
 )
@@ -10,6 +11,10 @@ type FontMakerHandler struct {
 }
 
 func (me *FontMakerHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+
+	fmk := fontmaker.NewFontMaker()
+	_ = fmk
+
 	pdf := gopdf.GoPdf{}
 	pdf.Start(gopdf.Config{Unit: "pt", PageSize: gopdf.Rect{W: 595.28, H: 841.89}}) //595.28, 841.89 = A4
 	pdf.AddFont("THSarabunPSK", new(fonts.THSarabun), Path_ResFont("THSarabun.z"))
