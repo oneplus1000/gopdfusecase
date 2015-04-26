@@ -20,7 +20,7 @@ func (me *NoembedPdfHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		log.Printf("ERROR:%s\n", err.Error())
 	}
 	pdf.SetFont("Loma", "B", 14)
-	pdf.Cell(nil, Encoder_Utf8ToCp874("ก"))
+	pdf.Cell(nil, "ก")
 	w.Header().Set("Content-type", "application/pdf")
 	b := pdf.GetBytesPdf()
 	w.Write(b)
