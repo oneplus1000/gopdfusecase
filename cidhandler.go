@@ -6,10 +6,13 @@ import (
 	"github.com/signintech/gopdf"
 )
 
+//test cid
 type CidHandler struct {
 }
 
-func (me *CidHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	gopdf.Ttf2CID("ก", "/home/oneplus/GOPATH/src/github.com/signintech/gopdf/fontmaker/ttf/Loma.ttf")
-	w.Write([]byte("ok"))
+//x
+func (c *CidHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	var subsetObj gopdf.SubsetFontObj
+	subsetObj.AddChars("ก")
+	subsetObj.Build()
 }
