@@ -1,6 +1,7 @@
 package gopdfusecase
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -24,7 +25,9 @@ func (me *NoembedPdfHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	//log.Printf("ERROR")
 	pdf.Cell(nil, "กข")
+	pdf.Cell(nil, "คง")
 	w.Header().Set("Content-type", "application/pdf")
 	b := pdf.GetBytesPdf()
+	fmt.Printf("byte=%s\n\n", string(b))
 	w.Write(b)
 }
