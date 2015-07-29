@@ -5,5 +5,5 @@ func Path_Www(filename string) string {
 }
 
 func Path_ResFont(fontnamefilename string) string {
-	return "res/fonts/" + fontnamefilename
+	return "../res/fonts/" + fontnamefilename
 }
